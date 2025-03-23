@@ -53,6 +53,11 @@ export default function TabTwoScreen() {
 
         <TouchableOpacity style={styles.card} onPress={Exercise5}>
           <ThemedText type="defaultSemiBold">Exercise 5</ThemedText>
+          <ThemedText type="default">Image (Image picker when image selected should display the image selected)</ThemedText>
+          <ThemedText type="default">Name (Text Input)</ThemedText>
+          <ThemedText type="default">{'\u2022'} Email (Text Input)</ThemedText>
+          <ThemedText type="default">{'\u2022'} Password (Text Input)</ThemedText>
+          <ThemedText type="default">Register (Button)</ThemedText>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.card} onPress={Exercise6}>
