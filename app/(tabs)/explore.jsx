@@ -41,6 +41,10 @@ export default function TabTwoScreen() {
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <TouchableOpacity style={styles.card} onPress={LoginForm}>
           <ThemedText type="defaultSemiBold">Exercise 3</ThemedText>
+          <ThemedText type="default">Create login screen</ThemedText>
+          <ThemedText type="default">Login screen fields</ThemedText>
+          <ThemedText type="default">{'\u2022'} Email</ThemedText>
+          <ThemedText type="default">{'\u2022'} Password</ThemedText>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.card} onPress={Exercise4}>

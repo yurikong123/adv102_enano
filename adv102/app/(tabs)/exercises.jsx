@@ -8,6 +8,7 @@ export default function Exercises() {
         { title: 'Exercise 3', description: '<strong>test</strong><ul><li>test</li><li>a</li></ul>', href: '/login' },
         { title: 'Exercise 4', description: 'Desc', href: '/' },
         { title: 'Exercise 5', description: 'Desc', href: '/' },
+        { title: 'Exercise 6', description: 'Desc', href: '/' },
     ]
 
     return (
