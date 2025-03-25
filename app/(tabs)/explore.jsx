@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    backgroundColor: 'blue',
+    backgroundColor: 'green',
     padding: 20,
     borderRadius: 8,
     marginBottom: 15,

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
 
 const QuizApp = () => {
   const [numQuestions, setNumQuestions] = useState('');
@@ -56,7 +56,9 @@ const QuizApp = () => {
             onChangeText={setNumQuestions}
           />
           <View style={styles.buttonContainer}>
-            <Button title="Start Quiz" onPress={fetchQuestions} />
+            <TouchableOpacity style={styles.greenButton} onPress={fetchQuestions}>
+              <Text style={styles.buttonText}>Start Quiz</Text>
+            </TouchableOpacity>
           </View>
         </View>
       ) : quizCompleted ? (
@@ -66,7 +68,12 @@ const QuizApp = () => {
             Your Score: {score} / {questions.length}
           </Text>
           <View style={styles.buttonContainer}>
-            <Button title="Restart Quiz" onPress={() => setQuestions([])} />
+            <TouchableOpacity
+              style={styles.greenButton}
+              onPress={() => setQuestions([])}
+            >
+              <Text style={styles.buttonText}>Restart Quiz</Text>
+            </TouchableOpacity>
           </View>
         </View>
       ) : (
@@ -90,7 +97,13 @@ const QuizApp = () => {
             )}
           />
           <View style={styles.buttonContainer}>
-            <Button title="Next" onPress={nextQuestion} disabled={!selectedAnswer} />
+            <TouchableOpacity
+              style={[styles.greenButton, { opacity: !selectedAnswer ? 0.5 : 1 }]}
+              onPress={nextQuestion}
+              disabled={!selectedAnswer}
+            >
+              <Text style={styles.buttonText}>Next</Text>
+            </TouchableOpacity>
           </View>
         </View>
       )}
@@ -103,15 +116,17 @@ const styles = StyleSheet.create({
   title: { fontSize: 22, color: 'white', marginBottom: 15, textAlign: 'center' },
   inputContainer: { alignItems: 'center', padding: 20, backgroundColor: '#1e1e1e', borderRadius: 10, width: '90%' },
   input: { borderBottomWidth: 1, width: '80%', textAlign: 'center', color: 'white', fontSize: 18, marginBottom: 15 },
-  buttonContainer: { marginTop: 15, width: '80%' },
+  buttonContainer: { marginTop: 15, width: '80%' }, 
   quizContainer: { alignItems: 'center', padding: 25, backgroundColor: '#1e1e1e', borderRadius: 10, width: '90%' },
   questionText: { fontSize: 20, color: 'white', marginBottom: 20, textAlign: 'center' },
   option: { backgroundColor: '#333', padding: 15, marginVertical: 8, borderRadius: 8, width: '100%', alignItems: 'center' },
-  selectedOption: { backgroundColor: '#4caf50' },
+  selectedOption: { backgroundColor: 'green' },
   optionText: { color: 'white', fontSize: 16 },
   resultContainer: { alignItems: 'center', padding: 25, backgroundColor: '#1e1e1e', borderRadius: 10, width: '90%' },
   resultText: { fontSize: 24, color: 'white', fontWeight: 'bold', marginBottom: 10 },
   resultScore: { fontSize: 20, color: 'lightgreen', marginVertical: 10 },
+  greenButton: { backgroundColor: 'green', paddingVertical: 12, borderRadius: 8, alignItems: 'center', justifyContent: 'center' },
+  buttonText: { color: 'white', fontSize: 18 },
 });
 
 export default QuizApp;

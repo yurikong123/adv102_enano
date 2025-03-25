@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { StyleSheet, TextInput, Button, View, Platform, Text } from 'react-native';
-import { useNavigation } from '@react-navigation/native';  // Import the useNavigation hook
+import { StyleSheet, TextInput, View, TouchableOpacity, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';  
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import Login from '@/adv102/app/login';
-import { isWhiteSpaceLike } from 'typescript';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -13,6 +11,7 @@ export default function LoginScreen() {
 
   const handleLogin = () => {
     console.log('Logging in with', { email, password });
+    
   };
 
   return (
@@ -35,8 +34,10 @@ export default function LoginScreen() {
           value={password}
           onChangeText={setPassword}
         />
-        <Button title="Login" onPress={handleLogin} />
-        
+      
+        <TouchableOpacity style={styles.greenButton} onPress={handleLogin}>
+          <Text style={styles.buttonText}>Login</Text>
+        </TouchableOpacity>
       </View>
     </ThemedView>
   );
@@ -53,10 +54,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     alignItems: 'center',
   },
-  titleContainer: {
-    marginBottom: 20,
-    alignItems: 'center',
-  },
   formContainer: {
     marginBottom: 20,
   },
@@ -69,10 +66,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     backgroundColor: 'white',
   },
-  footer: {
-    alignItems: 'center',
-    marginTop: 20,
+  greenButton: {
+    backgroundColor: 'green',  
+    paddingVertical: 12,       
+    borderRadius: 8,           
+    alignItems: 'center',     
+    justifyContent: 'center',  
+    marginTop: 10,             
   },
-
-
+  buttonText: {
+    color: 'white',            
+    fontSize: 18,             
+  },
 });
+

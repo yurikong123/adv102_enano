@@ -15,7 +15,7 @@ export default function TabTwoScreen() {
       {/* Scrollable Content */}
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         
-        <ThemedText style={styles.nameText} type="defaultSemiBold">Je-ann V. Camillo</ThemedText>
+        <ThemedText style={styles.nameText} type="defaultSemiBold">Yuri Adrienn Eñano</ThemedText>
       
       </ScrollView> 
     </View>         

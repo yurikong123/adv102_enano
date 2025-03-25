@@ -28,7 +28,7 @@ export default function Stopwatch() {
     const milliseconds = count % 100;
 
     return (
-        <View style={{ padding: 190, gap: 5, backgroundColor: 'blue' }}>
+        <View style={{ padding: 190, gap: 5, backgroundColor: 'green' }}>
             <Text style={{ fontSize: 100 }}>
                 {hours < 10 ? "0" : ""}{hours}:{minutes < 10 ? "0" : ""}{minutes}:
                 {seconds < 10 ? "0" : ""}{seconds}.{milliseconds < 10 ? "0" : ""}{milliseconds}
