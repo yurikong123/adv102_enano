@@ -30,6 +30,16 @@ export default function TabTwoScreen() {
     navigation.navigate('Exercise7');
   };
 
+  const Exercise8 = () => {
+    navigation.navigate('Exercise8');
+  };
+
+  const Exercise9 = () => {
+    navigation.navigate('Exercise9');
+  };
+
+
+
   return (
     <View style={styles.container}>
       {/* Header Section */}
@@ -66,6 +76,14 @@ export default function TabTwoScreen() {
 
         <TouchableOpacity style={styles.card} onPress={Exercise7}>
           <ThemedText type="defaultSemiBold">Exercise 7</ThemedText>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.card} onPress={Exercise8}>
+          <ThemedText type="defaultSemiBold">Exercise 8</ThemedText>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.card} onPress={Exercise9}>
+          <ThemedText type="defaultSemiBold">Exercise 9</ThemedText>
         </TouchableOpacity>
 
       </ScrollView>
